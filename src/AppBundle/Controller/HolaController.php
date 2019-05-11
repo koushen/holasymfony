@@ -19,7 +19,7 @@ class HolaController
      * @Route("/hola")
      */
     public function showAction(){
-        return new Response('HOLA QUE TAL CHAVAL!!');
+        return new Response('HOLA QUE TAL USUARIO!!');
     }
 
     /**
