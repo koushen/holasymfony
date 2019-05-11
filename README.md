@@ -1,2 +1,0 @@
-# holasymfony
-hola test symfony
