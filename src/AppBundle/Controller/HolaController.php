@@ -10,22 +10,17 @@ namespace AppBundle\Controller;
 
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
-class HolaController
+class HolaController extends Controller
 {
-
-    /**
-     * @Route("/hola")
-     */
-    public function showAction(){
-        return new Response('HOLA QUE TAL USUARIO!!');
-    }
-
     /**
      * @Route("/hola/{name}")
      */
     public function nameAction($name){
-        return new Response('HOLA QUE TAL '.$name.'!!');
+        return $this->render('hola/hola.html.twig',[
+            'name'  =>  $name
+        ]);
     }
 }
