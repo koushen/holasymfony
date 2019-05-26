@@ -30,6 +30,15 @@ class HolaController extends Controller
         return new Response('<html><body><H1>GENUS CREATED!!</H1></body></html>');
     }
 
+    /**
+     * @Route("/hola/list")
+     */
+    public function listAction(){
+        $em = $this->getDoctrine()->getManager();
+        $res = $em->getRepository("AppBundle:Genus")->findAll();
+        dump($res);
+        die;
+    }
 
     /**
      * @Route("/hola/{name}", name="homepage")
