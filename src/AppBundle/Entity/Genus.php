@@ -30,6 +30,11 @@ class Genus
     private $name;
 
     /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $description;
+
+    /**
      * @return mixed
      */
     public function getName()
@@ -43,6 +48,22 @@ class Genus
     public function setName($name)
     {
         $this->name = $name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
     }
 
 
