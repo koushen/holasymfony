@@ -20,8 +20,7 @@ class LoadFixtures extends Fixture
         $genus = new Genus();
         $genus->setName('Cosa'.rand(1,100));
         $genus->setDescription('description '.rand(1,1000));
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($genus);
-        $em->flush();
+        $manager->persist($genus);
+        $manager->flush();
     }
 }
