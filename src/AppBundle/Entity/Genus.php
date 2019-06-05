@@ -23,7 +23,10 @@ class Genus
      * @ORM\Column(type="integer")
      */
     private $id;
-
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isPublished;
     /**
      * @ORM\Column(type="string")
      */
