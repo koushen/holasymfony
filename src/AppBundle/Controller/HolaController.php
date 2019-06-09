@@ -37,7 +37,8 @@ class HolaController extends Controller
      */
     public function listAction(){
         $em = $this->getDoctrine()->getManager();
-        $res = $em->getRepository("AppBundle:Genus")->findAll();
+        $res = $em->getRepository("AppBundle:Genus")
+            ->findAllPublished();
         return $this->render('hola/list.html.twig',[
             'res'  =>  $res
         ]);

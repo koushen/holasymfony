@@ -2,3 +2,4 @@ AppBundle\Entity\Genus:
       genus_{1..10}:
           name: <vikingName()>
           description: <text(30)>
+          isPublished: <boolean(75)>
