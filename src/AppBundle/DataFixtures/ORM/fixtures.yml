@@ -3,3 +3,9 @@ AppBundle\Entity\Genus:
           name: <vikingName()>
           description: <text(30)>
           isPublished: <boolean(75)>
+AppBundle\Entity\GenusNote:
+      genus.note_{1..100}:
+          username: <userName()>
+          userAvatarFilename: '50%? johana.jpeg : mike.jpeg'
+          note: <paragraph()>
+          createAt: <dateTimeBetween('-6 months', 'now')>
