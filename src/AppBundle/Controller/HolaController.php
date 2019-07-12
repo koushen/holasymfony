@@ -9,6 +9,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Genus;
+use AppBundle\Entity\GenusNote;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -26,8 +27,18 @@ class HolaController extends Controller
         $genus = new Genus();
         $genus->setName('Cosa'.rand(1,100));
         $genus->setDescription('description '.rand(1,1000));
+
+        $genusNote = new GenusNote();
+        $genusNote->setNote('LOREM IPSUM QUE SI QUE VALE QUE ESTO PINTA COSAS');
+        $genusNote->setUsername('USuario');
+        $genusNote->setUserAvatarFilename('mike.jpg');
+        $genusNote->setCreateAt(new \DateTime('-1 month'));
+        $genusNote->setGenus($genus);
+
         $em = $this->getDoctrine()->getManager();
         $em->persist($genus);
+        $em->persist($genusNote);
+
         $em->flush();
         return new Response('<html><body><H1>GENUS CREATED!!</H1></body></html>');
     }
